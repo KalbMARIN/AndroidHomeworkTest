@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroidHomeworkTest</string>
+    <string name="button_button">Кнопка</string>
+    <string name="Name_name">Имя</string>
+    <string name="hello_artem">Привет Артем</string>
+    <string name="hello_world">Привет Мир</string>
+</resources>
