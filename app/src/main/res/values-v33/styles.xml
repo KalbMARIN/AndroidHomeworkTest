@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:backgroundTint">#AA00B3</item>
+        <item name="cornerRadius">4dp</item>
+    </style>
+</resources>
