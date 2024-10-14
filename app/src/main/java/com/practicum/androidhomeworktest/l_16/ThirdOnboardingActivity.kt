@@ -1,4 +1,4 @@
-package com.practicum.androidhomeworktest
+package com.practicum.androidhomeworktest.l_16
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,18 +7,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.practicum.androidhomeworktest.R
 
-class SecondOnboardingActivity : AppCompatActivity() {
+class ThirdOnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_second_onboarding)
+        setContentView(R.layout.activity_third_onboarding)
 
-        val intent = Intent(this.baseContext, ThirdOnboardingActivity::class.java)
-        val button = findViewById<Button>(R.id.btnOpenThird)
+        val intent = Intent(this.baseContext, MyNotesActivity::class.java)
+
+        val button = findViewById<Button>(R.id.btnOpenLogin)
+
         button.setOnClickListener {
             startActivity(intent)
         }
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

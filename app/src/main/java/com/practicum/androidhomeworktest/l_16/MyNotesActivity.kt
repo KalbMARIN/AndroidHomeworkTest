@@ -1,4 +1,4 @@
-package com.practicum.androidhomeworktest
+package com.practicum.androidhomeworktest.l_16
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.practicum.androidhomeworktest.R
 
 class MyNotesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

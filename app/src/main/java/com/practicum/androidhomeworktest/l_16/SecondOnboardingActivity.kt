@@ -1,28 +1,25 @@
-package com.practicum.androidhomeworktest
+package com.practicum.androidhomeworktest.l_16
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.postDelayed
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.practicum.androidhomeworktest.R
 
-
-class SplashScreenActivity : AppCompatActivity() {
+class SecondOnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(R.layout.activity_second_onboarding)
 
-        @Suppress("DEPRECATION")
-        Handler().postDelayed(Runnable {
-            val i = Intent(this@SplashScreenActivity, FirstOnboardingActivity::class.java)
-            startActivity(i)
-            finish()
-        }, 3000)
-
+        val intent = Intent(this.baseContext, ThirdOnboardingActivity::class.java)
+        val button = findViewById<Button>(R.id.btnOpenThird)
+        button.setOnClickListener {
+            startActivity(intent)
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
