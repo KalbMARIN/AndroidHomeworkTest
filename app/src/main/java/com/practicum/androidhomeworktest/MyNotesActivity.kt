@@ -10,21 +10,29 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.practicum.androidhomeworktest.databinding.ActivityMyNotesBinding
 
 class MyNotesActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    lateinit var bindingClass: ActivityMyNotesBinding
+
+    override fun onCreate(savedInstanceState: Bundle? ) {
         super.onCreate(savedInstanceState)
+        bindingClass = ActivityMyNotesBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_my_notes)
+        setContentView(bindingClass.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val message = intent.getStringExtra("EXTRA_KEY_TEXT")
+        bindingClass.tvWelcomeText.text = message
+
 
         val listView = findViewById<ListView>(R.id.listView)
         val userData: EditText = findViewById(R.id.user_data)
         val button: Button = findViewById(R.id.button_add)
+
 
         val notes: MutableList<String> = mutableListOf()
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, notes)
@@ -42,5 +50,6 @@ class MyNotesActivity : AppCompatActivity() {
             if (text != "")
                 adapter.insert(text, 0)
         }
+
     }
 }

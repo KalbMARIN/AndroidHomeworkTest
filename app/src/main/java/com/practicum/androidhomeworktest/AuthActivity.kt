@@ -42,7 +42,10 @@ class AuthActivity : AppCompatActivity() {
                     userLogin.text.clear()
                     userPass.text.clear()
 
+
+
                     val intent = Intent(this, MyNotesActivity::class.java)
+                    intent.putExtra("EXTRA_KEY_TEXT", "Welcome, $login!")
                     startActivity(intent)
                 } else
                     Toast.makeText(this, "User $login not authorized", Toast.LENGTH_LONG).show()
